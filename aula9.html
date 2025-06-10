@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula JavaScript</title>
+</head>
+<body>
+    <div>
+        <h1 id="Titulo">Mensagem</h1>
+        <button id="botao">Clique</button>
+        <div id="lista"></div>
+        <span class="mensagem" id="span-mensagem"></span>
+    </div>
+
+    <script>
+        const aviso = 'aula java';
+        let mensagem = 'Olá mundo';
+        let span = document.getElementById('span-mensagem');
+        let divlista = document.getElementById('lista');
+        let button = document.getElementById('botao');
+
+        let pessoas = ['João', 'José', 'Maria', 'Carlos'];
+
+        button.addEventListener('click', () => {
+            mostrarmensagem();
+            mostrarpessoas();
+        });
+
+        function mostrarmensagem() {
+            span.innerHTML = mensagem;
+        }
+
+        function mostrarpessoas() {
+            let listaHtml = "<ul>";
+            for (let i = 0; i < pessoas.length; i++) {
+                listaHtml += `<li>${pessoas[i]}</li>`;
+            }
+            listaHtml += "</ul>";
+            divlista.innerHTML = listaHtml;
+        }
+    </script>
+</body>
+</html>
